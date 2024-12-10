@@ -1,0 +1,63 @@
+steps to install SELF HOSTED AGENT IN Local MACHINE 
+
+Watch classroom recording for detailed creation steps 4 dec24
+
+1. Create a EC2 instance and select at list t2 medium  and connect it to local terminal.
+
+2. install the necessary software to run project 
+
+ eg. sudo apt update && sudo apt install openjdk-17-jdk 
+ 
+ first updated the system and then, i have install a  java 17 .
+ 
+3. Also i have install .NET9 in linux version 24.04 refer link https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?tabs=dotnet9&pivots=os-linux-ubuntu-2404
+             or copy the code
+   
+   sudo add-apt-repository ppa:dotnet/backports
+   sudo apt-get update && \
+   sudo apt-get install -y dotnet-sdk-9.0
+   
+4.   install maven 3.9.9 in ubuntu 24 follow the perplexcity.ai
+
+ 1: cd /tmp
+
+ 2. wget https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz -P /tmp
+
+ 3:  sudo tar xf /tmp/apache-maven-3.9.9-bin.tar.gz -C /opt
+
+ 4. sudo nano /etc/profile.d/maven.sh
+
+ 5. export M2_HOME=/opt/apache-maven-3.9.9
+export PATH=$M2_HOME/bin:$PATH
+
+ 6. exit 
+
+ 7. relogin ubuntu
+
+ 8. mvn -version
+
+
+
+5. install nvm and use 22 version of node js or search on perplexity  refer link https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl#install-nvm-nodejs-and-npm
+
+1.curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+ 2.source ~/.bashrc
+
+3. command -v nvm
+
+4. nvm install --lts
+
+5. nvm --version
+
+
+6. open Azure Devops and from Agent download it in ec2 ubuntu terminal .
+
+
+
+install the agent the create a personal access tocken when it will asked for (PAT)
+
+tocken look kike this :
+Fbr7ONqRBXVKQ6AngTqnPw9nAX71rMfVXh1HM655E6CAxkIsMkmMJQQJ99ALACAAAAAAAAAAAAASAZDOZVim
+
+6. to run agent this is the command .\run.sh
